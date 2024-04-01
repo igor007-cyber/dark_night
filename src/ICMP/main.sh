@@ -11,7 +11,7 @@ dig_ip(){
 }
 
 traceroute_ip(){
-    traceroute -n "$1" | awk '{print $2}' | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}'
+    traceroute -n "$1" | awk "{print $2}" | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}"
 }
 
 nmap_ip(){
@@ -19,18 +19,15 @@ nmap_ip(){
 }
 
 todos(){
-    echo 'RESULTADO DO NMAP:'
-    nmap "$1"
-    echo
-    echo 'RESULTADO DO TRACEROUTE:'
-    traceroute "$1"
-    echo
-    echo 'RESULTADO DO DIG:'
-    dig "$1"
-    echo
-    echo 'RESULTADO DO PING:'
-    ping "$1"
+    echo -e "\n RESULTADO DO NMAP: \n"
+    nmap_ip "$1"
+    echo -e "\n\n RESULTADO DO TRACEROUTE: \n"
+    traceroute_ip "$1"
+    echo -e "\n\n RESULTADO DO DIG: \n"
+    dig_ip "$1"
+    echo -e "\n\n RESULTADO DO PING: \n"
+    ping_ip "$1"
 }
 
 # Exemplo de uso:
-todos '$1'
+todos "$1"
