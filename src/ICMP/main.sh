@@ -1,25 +1,24 @@
 #!/bin/bash
 
-ping(){
+ping($1){ 
     a="$(ping -c 1 -4 "$1")"
     echo "$a" | grep "PING" | cut -d " " -f3 | tr "()" " " | cut -d " " -f2
 }
 
-dig(){
+dig($1){
     a="$(dig "$1")"
     echo "$a" | grep "IN"
 }
 
-traceroute(){
+traceroute($1){
     traceroute -n "$1" | awk '{print $2}' | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}'
 }
 
-nmap(){
-    nmap_output=$(nmap -sS -sV "$1")
-    echo "$nmap_output" | awk '/\/tcp/{print "Port: "$1", State: "$2", Service: "$3", Version: "$4}'
+nmap($1){
+   bash nmapAutomator.sh -H $1 -t recon -o nmap.txt
 }
 
-todos(){
+todos($1){
     echo 'RESULTADO DO NMAP:'
     nmap "$1"
     echo
@@ -34,4 +33,4 @@ todos(){
 }
 
 # Exemplo de uso:
-todos $1
+nmap $1
