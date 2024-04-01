@@ -8,15 +8,6 @@ sudo apt-get autoremove -y
 
 sudo apt-get install golang -y
 
-# Ozint tools
-
-git clone https://github.com/KasRoudra/PyPhisher 
-git clone https://github.com/jaykali/maskphish 
-git clone https://github.com/thewhiteh4t/seeker 
-git clone  https://github.com/Lucksi/Mr.Holmes 
-git clone https://github.com/exiftool/exiftool 
-git clone https://github.com/techchipnet/CamPhish
-
 # subdomain/domain
 
 git clone https://github.com/21y4d/nmapAutomator.git 
@@ -51,10 +42,4 @@ git clone https://github.com/xmendez/wfuzz
 cd wfuzz 
 pip install wfuzz
 
-# Anonimato
 
-git clone https://github.com/FDX100/Auto_Tor_IP_changer.git 
-git clone https://github.com/owerdogan/whoami-project 
-git clone sudo apt update 
-sudo apt install tar tor curl python3 python3-scapy network-manager 
-sudo make install
