@@ -40,4 +40,16 @@ fi
 
 # Extrair o domínio usando sed
 dominio=$(echo "$1" | sed -E 's|^(https?://)?(www\.)?([^/?]+).*|\3|');
+echo ".";
+sleep 0.2;
+echo ".";
+sleep 0.2;
+echo ".";
+sleep 0.2;
+echo "Digite o nome da pasta que vc quer guardar os arquivos";
+var = "";
+read -p "nome do arquivo:" var;
+mkdir $var;
+echo "DOMAIN"
+
 
