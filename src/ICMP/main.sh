@@ -1,32 +1,37 @@
-# igor
+#!/bin/bash
 
-ping(x){
-    a="$(ping -c 1 -4 x)"; 
-    echo $a | grep "PING" | cut -d " " -f3 | tr "()" " " | cut -d " " -f2
-    return a
+ping(){
+    a="$(ping -c 1 -4 "$1")"
+    echo "$a" | grep "PING" | cut -d " " -f3 | tr "()" " " | cut -d " " -f2
 }
 
-dig(x){
-    a="$(dig x)"; echo $a | grep "IN" 
-    return a
+dig(){
+    a="$(dig "$1")"
+    echo "$a" | grep "IN"
 }
 
-traceroute(x){
-    ips=$(traceroute -n x | awk '{print $2}' | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}')
-    return ips
+traceroute(){
+    traceroute -n "$1" | awk '{print $2}' | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}'
 }
 
-nmap(x){
-    nmap_output=$(nmap -sS -sV "$x")
-
-    # Extrair e imprimir as informações
+nmap(){
+    nmap_output=$(nmap -sS -sV "$1")
     echo "$nmap_output" | awk '/\/tcp/{print "Port: "$1", State: "$2", Service: "$3", Version: "$4}'
-
 }
 
-todos(x){
-    nmap(x)
-    traceroute(x)
-    dig(x)
-    ping(x)
+todos(){
+    echo 'RESULTADO DO NMAP:'
+    nmap "$1"
+    echo
+    echo 'RESULTADO DO TRACEROUTE:'
+    traceroute "$1"
+    echo
+    echo 'RESULTADO DO DIG:'
+    dig "$1"
+    echo
+    echo 'RESULTADO DO PING:'
+    ping "$1"
 }
+
+# Exemplo de uso:
+todos $1
