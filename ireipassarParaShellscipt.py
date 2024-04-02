@@ -1,8 +1,8 @@
 # isso aqui e pra passar pra shellscript com chatgpt
 # ele vai ficar no arquivo principal
-# com isso nós iremos chamar as funçoes de cada arquivo com base nos comandos
+# com isso nós iremos chamar as funçoes de cada arquivo com base nos comandos.
 # pra tu entender o que isso faz é mais ou menos assim :
-# 
+# python nome_arquivo -fuzz [nome do site]
 
 import argparse
 
