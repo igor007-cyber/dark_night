@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 echo "                                                        #";
 echo "                                                      #    #";
@@ -40,8 +40,6 @@ fi
 
 # Extrair o domínio usando sed
 dominio=$(echo "$1" | sed -E 's|^(https?://)?(www\.)?([^/?]+).*|\3|');
-
-#!/bin/bash
 
 # Argumentos padrão
 output_file=""
