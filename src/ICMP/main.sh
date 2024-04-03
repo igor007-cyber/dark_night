@@ -1,4 +1,4 @@
-#!/bin/bash
+    #!/bin/bash
 
 ping_ip(){ 
     a="$(ping -c 1 -4 "$1")"
@@ -18,6 +18,11 @@ nmap_ip(){
    bash nmapAutomator.sh -H $1 -t recon -o nmap.txt
 }
 
+whatweb_i(){
+    whatweb $1 -v
+
+}
+
 todos(){
     echo -e "\n RESULTADO DO NMAP: \n"
     nmap_ip "$1"
@@ -27,6 +32,8 @@ todos(){
     dig_ip "$1"
     echo -e "\n\n RESULTADO DO PING: \n"
     ping_ip "$1"
+    echo -e "\n\n RESULTADO DO WHATWEB: \n"
+    whatweb_i "$1"
 }
 
 # Exemplo de uso:
