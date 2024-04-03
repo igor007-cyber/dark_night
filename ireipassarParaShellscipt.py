@@ -5,6 +5,7 @@
 # python nome_arquivo -fuzz [nome do site]
 
 import argparse
+from teste import todos
 
 # Analisar os argumentos da linha de comando
 parser = argparse.ArgumentParser(description='DARK NIGHT')
@@ -16,5 +17,8 @@ parser.add_argument('-s', '--subdomio', help='Aqui ele lhe mostrará todos os su
 parser.add_argument('-v', '--verbose', help='Vai exibir a execução do arquivo', required=True)
 parser.add_argument('-o', '--output', help='Output file name [by default it is \'domain.txt\']')
 args = parser.parse_args()
+
+# Chamando a função 'todos' do script 'teste.py' com base nos argumentos fornecidos
+todos(args.ICMP)
 
 
