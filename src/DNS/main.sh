@@ -1,5 +1,6 @@
-#!/bin/bash
-dirb_x(){
+dnsenum_dns(){
+
+} 
+dnsmap_dns(){
     
 }
-

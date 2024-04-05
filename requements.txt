@@ -9,6 +9,8 @@ sudo apt-get autoremove -y
 sudo apt-get install golang -y
 sudo apt install ffuf -y
 sudo apt install gobuster -y
+sudo apt install dnsenum
+
 
 # subdomain/domain
 

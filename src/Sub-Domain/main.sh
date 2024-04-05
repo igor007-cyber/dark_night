@@ -1,7 +1,9 @@
-subfinder_site(){
+#!/bin/bash
+subfinder_gau(){
 
 }
 
 gobuster_site(){
-    
+
 }
+
