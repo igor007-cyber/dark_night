@@ -32,8 +32,7 @@ echo "#      #";
 echo "#    #"; 
 echo " #";
 sleep 1;
-# Extrair o domínio usando sed
-#dominio=$(echo "$1" | sed -E 's|^(https?://)?(www\.)?([^/?]+).*|\3|');
+# Extrair o domínio usando se
 
 # Argumentos padrão
 output_file=""
