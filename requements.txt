@@ -47,3 +47,5 @@ cd wfuzz
 pip install wfuzz
 
 
+# WORDLIST - se quiser tem o link aqui https://github.com/danielmiessler/SecLists/
+
