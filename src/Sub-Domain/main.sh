@@ -3,6 +3,8 @@
 #Variavel Globla
 export dominio=$(echo "$1" | sed -E 's|^(https?://)?(www\.)?([^/?]+).*|\3|');
 
+# sort -u [arquivo] -o [novo.arquivo] —> ele vai tirar palavras repetidas
+
 dirb_site(){
     #vai verificar diretorios
 }
