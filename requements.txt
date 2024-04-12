@@ -27,6 +27,7 @@ wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_
 unzip aquatone_linux_amd64_1.7.0.zip 
 touch aquatone 
 sudo apt-get autoremove -y
+pip install git+https://github.com/guelfoweb/knock.git
 
 # vulnerabilidades
 
