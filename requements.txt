@@ -1,16 +1,20 @@
 #!/bin/bash
 
+# Atualização
 sudo apt-get update -y 
 sudo apt-get upgrade -y 
 sudo apt-get dist-upgrade -y 
 sudo apt-get autoclean -y 
 sudo apt-get autoremove -y
 
+# instalações do Kali Linux
 sudo apt-get install golang -y
 sudo apt install ffuf -y
 sudo apt install gobuster -y
-sudo apt install dnsenum
-
+sudo apt install dnsenum -y
+sudo apt install dirb -y
+sudo apt-get install python3-pip
+python3 -m pip install --upgrade pip
 
 # subdomain/domain
 
