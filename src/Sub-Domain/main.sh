@@ -9,16 +9,19 @@ export dominio=$(echo "$1" | sed -E 's|^(https?://)?(www\.)?([^/?]+).*|\3|');
 # somente se elas ainda não aparecerem no arquivo. Também gera novas linhas para 
 # stdout, tornando-o um pouco como um tee -a que remove duplicatas.
 
-dirb_site(){
-    #vai verificar diretorios
-}
+#dirb_site(){  ------> LENTO PRA CARAI
+ #   gnome-terminal -- dirb $dominio & 
+#}
 
 gobuster_site(){
-    # vai verificar diretorios
+  # vai verificar diretorio
+  gnome-terminal -- gobuster dir -u "$1" -w ./lista/diretorios/diretorio-g.txt
+
 }
 
 knock_site(){
      # vai verificar os subdominios
+     gnome-terminal -- knockpy -d "$1" --recon --bruteforce
 }
 
 assetfinder_site(){

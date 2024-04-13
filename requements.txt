@@ -13,8 +13,10 @@ sudo apt install ffuf -y
 sudo apt install gobuster -y
 sudo apt install dnsenum -y
 sudo apt install dirb -y
-sudo apt-get install python3-pip
+sudo apt install httprobe -y
+sudo apt-get install python3-pip -y
 python3 -m pip install --upgrade pip
+knockpy @ git+https://github.com/guelfoweb/knock.git
 
 # subdomain/domain
 
