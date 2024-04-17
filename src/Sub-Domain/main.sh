@@ -15,26 +15,30 @@ export dominio=$(echo "$1" | sed -E 's|^(https?://)?(www\.)?([^/?]+).*|\3|');
 
 gobuster_site(){
   # vai verificar diretorio
-  gnome-terminal -- gobuster dir -u "$1" -w ./lista/diretorios/diretorio-g.txt
+    diretorio = + '$dominio' + '/'
+    gobuster dir -u "$diretorio" -w ./lista/diretorios/diretorio-g.txt
 
 }
 
 knock_site(){
      # vai verificar os subdominios
-     gnome-terminal -- knockpy -d "$1" --recon --bruteforce
+     knockpy -d "$1" --recon --bruteforce
 }
 
 assetfinder_site(){
-    # vai verificar os subdominios
+    assetfinder -subs-only $dominio 
 }
 
-subfinder_gau(){
-    # vai verificar os subdominios
+subfinder_site(){
+    subfinder -d $dominio -silent >> teste.txt | tee
+
 }
 
 
 sublist3r_site(){
-    # vai verificar os subdominios
+    sublist3r -d $dominio -o url.txt
+    cat url.txt >> teste.txt
+    rm url.txt
 }
 
 httprobe_site(){
@@ -51,5 +55,13 @@ subjack_site(){ # verificação de falha
 
 dnsenum_site(){
     #   dnsenum --dnsserver 8.8.8.8 paodeacucar.com.br
+
+}
+
+httpx_site(){
+
+}
+
+gau_uro(){
 
 }
