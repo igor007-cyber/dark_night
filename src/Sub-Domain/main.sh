@@ -2,6 +2,7 @@
   
 #Variavel Globla
 export dominio=$(echo "$1" | sed -E 's|^(https?://)?(www\.)?([^/?]+).*|\3|');
+export pwd=$(pwd)
 
 # sort -u [arquivo] -o [novo.arquivo] —> ele vai tirar palavras repetidas
 
@@ -16,7 +17,7 @@ export dominio=$(echo "$1" | sed -E 's|^(https?://)?(www\.)?([^/?]+).*|\3|');
 gobuster_site(){
   # vai verificar diretorio
     diretorio = + '$dominio' + '/'
-    gobuster dir -u "$diretorio" -w ./lista/diretorios/diretorio-g.txt
+    gobuster dir -u "$diretorio" -w lista/diretorios/diretorio-g.txt
 
 }
 
@@ -26,11 +27,11 @@ knock_site(){
 }
 
 assetfinder_site(){
-    assetfinder -subs-only $dominio 
+    assetfinder -subs-only $dominio > assetfinder.txt
 }
 
 subfinder_site(){
-    subfinder -d $dominio -silent >> teste.txt | tee
+    subfinder -d $dominio -silent > subfinder.txt | tee
 
 }
 
@@ -45,6 +46,14 @@ httprobe_site(){
     # vai verificar se o site esta ativo
 }
 
+httpx_site(){
+    # vai verificar se o site esta ativo
+}
+
+gau_uro(){
+    
+}
+
 subzy_site(){ # verificação de falha
 
 }
@@ -53,15 +62,6 @@ subjack_site(){ # verificação de falha
 
 }
 
-dnsenum_site(){
-    #   dnsenum --dnsserver 8.8.8.8 paodeacucar.com.br
-
-}
-
-httpx_site(){
-
-}
-
-gau_uro(){
+todos(){
 
 }
